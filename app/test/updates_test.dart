@@ -53,16 +53,18 @@ void main() {
           release('1.2.3'),
           release(
             'v0.9.0',
-            files: ['kovetz-0.9.0-linux-x64.tar.gz'],
+            files: ['kovetz-0.9.0-linux-x86_64.AppImage'],
             draft: true,
           ),
-          release('v0.5.0', files: ['kovetz-0.5.0-android.apk']),
+          release('v0.5.0', files: ['kovetz-0.5.0-android-arm64.apk']),
           release(
             'v0.6.0',
             files: [
-              'kovetz-0.6.0-android.apk',
-              'kovetz-0.6.0-linux-x64.tar.gz',
-              'kovetz-0.6.0-windows-x64.zip',
+              'kovetz-0.6.0-android-arm64.APK',
+              'kovetz-0.6.0-linux-checksums.txt',
+              'kovetz-0.6.0-LINUX-x86_64.AppImage',
+              'kovetz-0.6.0-windows-checksums.txt',
+              'kovetz-0.6.0-WINDOWS-x64-setup.EXE',
               'notes.txt',
             ],
             prerelease: true,
@@ -74,9 +76,18 @@ void main() {
       expect(found.prerelease, isTrue);
       expect(found.notes, 'Новое.');
       expect(found.assets.keys, isNot(contains('notes.txt')));
-      expect(found.assetFor('android').toString(), endsWith('.apk'));
-      expect(found.assetFor('linux').toString(), contains('linux'));
-      expect(found.assetFor('windows').toString(), contains('windows'));
+      expect(
+        found.assetFor('android').toString(),
+        endsWith('-android-arm64.APK'),
+      );
+      expect(
+        found.assetFor('linux').toString(),
+        endsWith('-LINUX-x86_64.AppImage'),
+      );
+      expect(
+        found.assetFor('windows').toString(),
+        endsWith('-WINDOWS-x64-setup.EXE'),
+      );
       expect(newestRelease(feed([release('1.2.3')])), isNull);
       expect(() => newestRelease('not json'), throwsA(isA<UpdateFailure>()));
       expect(() => newestRelease('{}'), throwsA(isA<UpdateFailure>()));
@@ -87,7 +98,7 @@ void main() {
     Future<UpdateResult> run(String current, String body) =>
         UpdateChecker(fetch: (_) async => body, current: current).check();
     final body = feed([
-      release('v0.6.0', files: ['kovetz-0.6.0-android.apk']),
+      release('v0.6.0', files: ['kovetz-0.6.0-android-arm64.apk']),
     ]);
     expect((await run('0.5.0', body)).available, isTrue);
     expect((await run('0.6.0', body)).available, isFalse);
@@ -151,9 +162,9 @@ void main() {
           release(
             'v0.6.0',
             files: [
-              'kovetz-0.6.0-linux-x64.tar.gz',
-              'kovetz-0.6.0-windows-x64.zip',
-              'kovetz-0.6.0-android.apk',
+              'kovetz-0.6.0-linux-x86_64.AppImage',
+              'kovetz-0.6.0-windows-x64-setup.exe',
+              'kovetz-0.6.0-android-arm64.apk',
             ],
             body: 'Что нового',
           ),
@@ -179,7 +190,7 @@ void main() {
       await pump(tester, (_) async {
         if (fail) throw const SocketException('offline');
         return feed([
-          release('v0.5.0', files: ['kovetz-0.5.0-android.apk']),
+          release('v0.5.0', files: ['kovetz-0.5.0-android-arm64.apk']),
         ]);
       });
       await tester.tap(find.text('Проверить обновления'));
@@ -202,7 +213,7 @@ void main() {
           fetch: (_) async {
             requests++;
             return feed([
-              release('v0.6.0', files: ['kovetz-0.6.0-android.apk']),
+              release('v0.6.0', files: ['kovetz-0.6.0-android-arm64.apk']),
             ]);
           },
         ),

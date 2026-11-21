@@ -51,8 +51,8 @@ class ReleaseInfo {
       final name = entry.key.toLowerCase();
       final match = switch (platform) {
         'android' => name.endsWith('.apk'),
-        'linux' => name.contains('linux'),
-        'windows' => name.contains('windows'),
+        'linux' => name.contains('linux') && name.endsWith('.appimage'),
+        'windows' => name.contains('windows') && name.endsWith('.exe'),
         _ => false,
       };
       if (match) return entry.value;

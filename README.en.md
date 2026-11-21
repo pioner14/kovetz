@@ -55,8 +55,8 @@ Tested with JW Library backups using database schema versions 5, 8, 14 and 16 (b
 Download the file for your system from the [releases page](https://github.com/pioner14/kovetz/releases/latest):
 
 - `kovetz-<version>-android-arm64.apk` — Android, 64-bit ARM (almost all modern phones and tablets); allow installing from your browser;
-- `kovetz-<version>-windows-x64.zip` — unzip and run `kovetz.exe`;
-- `kovetz-<version>-linux-x64.tar.gz` — unpack and run `kovetz`.
+- **Windows.** Run `kovetz-<version>-windows-x64-setup.exe` and follow the installer prompts. The installer isn't signed with a certificate yet. If SmartScreen shows a warning, click “More info”, then “Run anyway”.
+- **Linux.** Download `kovetz-<version>-linux-x86_64.AppImage`. In your downloads folder, run `chmod +x kovetz-*-linux-x86_64.AppImage`, then double-click the file. If the AppImage fails to start, install `libfuse2` (`libfuse2t64` on Ubuntu 24.04) or run the file with `--appimage-extract-and-run`.
 
 > **Android is built for arm64 only.** That covers almost all phones and tablets from recent years, and the file is about three times smaller (around 23 MB). If you need another architecture (armeabi-v7a, x86_64), open an [issue](https://github.com/pioner14/kovetz/issues) and I will build it for you.
 
