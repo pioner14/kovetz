@@ -1,8 +1,8 @@
 /// Facts shown on the About screen. [appVersion] and [appBuild] must match
 /// `version:` in pubspec.yaml; a test enforces it.
 const appName = 'Kovetz';
-const appVersion = '0.6.0';
-const appBuild = 13;
+const appVersion = '0.6.1';
+const appBuild = 14;
 const appDeveloper = 'Nikolai Golotaistrov';
 const appRepository = 'https://github.com/pioner14/kovetz';
 const appGuideUrl = 'https://pioner14.github.io/kovetz-site/';
