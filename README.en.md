@@ -20,6 +20,10 @@ A free app for Android, Windows and Linux that merges JW Library backups from di
 
 Every device keeps its own notes, highlights and bookmarks, and restoring a backup in JW Library **replaces** everything on that device. Kovetz takes the backups from your phone, tablet and computer (even from different years) and builds **one combined backup** where nothing is lost.
 
+## Why “Kovetz”
+
+*Kovetz* (קוֹבֶץ) is Hebrew for “collection”, “compilation” and also “file”. It comes from a root meaning “to gather”, which is exactly what the app does: it gathers your notes from different devices into one backup.
+
 ## Features
 
 - **Merge backups.** Three steps: files, rules, result. Your original files are never changed. If one note was edited on two devices, the newer version wins and the other is kept in the report.
