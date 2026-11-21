@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B0F19"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="gold3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <filter id="sh3" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg3)"/>
+  
+  <g filter="url(#sh3)">
+    <!-- Golden Padlock Shackle rising from Diamond crown -->
+    <path d="M196 186 V136 C196 92, 316 92, 316 136 V186" fill="none" stroke="url(#gold3)" stroke-width="28" stroke-linecap="round"/>
+    
+    <!-- Large Faceted Diamond serving as the Padlock body -->
+    <polygon points="160,174 352,174 416,246 256,426 96,246" fill="#0284C7"/>
+    <!-- Top Crown Facets -->
+    <polygon points="160,174 352,174 320,246 192,246" fill="#7DD3FC"/>
+    <polygon points="160,174 192,246 96,246" fill="#38BDF8"/>
+    <polygon points="352,174 416,246 320,246" fill="#0EA5E9"/>
+    <!-- Bottom Pavilion Facets -->
+    <polygon points="96,246 192,246 256,426" fill="#0369A1"/>
+    <polygon points="192,246 320,246 256,426" fill="#0284C7"/>
+    <polygon points="320,246 416,246 256,426" fill="#075985"/>
+    
+    <!-- Minimalist Open Book + K Emblem inside the Diamond -->
+    <path d="M190 302 C216 290, 240 296, 256 308 C272 296, 296 290, 322 302 V234 C296 222, 272 228, 256 240 C240 228, 216 222, 190 234 Z" fill="#FFFFFF" fill-opacity="0.95"/>
+    <!-- Crisp K inside the book -->
+    <path d="M238 250 V286 M238 268 L272 250 M250 262 L274 286" stroke="#0F172A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    
+    <!-- Diamond outline highlight -->
+    <polygon points="160,174 352,174 416,246 256,426 96,246" fill="none" stroke="#BAE6FD" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+</svg>

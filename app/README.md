@@ -83,5 +83,5 @@ Workflow сохраняет артефакты без публикации в Gi
 1. Поднимите `version:` в `app/pubspec.yaml` и `appVersion`/`appBuild` в `app/lib/app_info.dart` (тест сверяет их).
 2. Закоммитьте и отправьте изменения в `main`.
 3. Поставьте тег и отправьте его: `git tag v0.6.1 && git push origin v0.6.1`. Тег со знаком «-» (`v0.6.1-beta`) публикуется как пре-релиз.
-4. Workflow `.github/workflows/release.yml` проверит, что тег совпадает с версией, соберёт Linux, Windows и Android, подпишет APK постоянным ключом (секреты из раздела «Подпись Android») и создаст релиз с файлами `kovetz-<версия>-android.apk`, `-linux-x64.tar.gz`, `-windows-x64.zip` и `SHA256SUMS.txt`. Без ключа подписи Android-сборка прерывается: APK, подписанный отладочным ключом, не публикуется.
+4. Workflow `.github/workflows/release.yml` проверит, что тег совпадает с версией, соберёт Linux, Windows и Android, подпишет APK постоянным ключом (секреты из раздела «Подпись Android») и создаст релиз с файлами `kovetz-<версия>-android-arm64.apk`, `-linux-x64.tar.gz`, `-windows-x64.zip` и `SHA256SUMS.txt`. Без ключа подписи Android-сборка прерывается: APK, подписанный отладочным ключом, не публикуется.
 

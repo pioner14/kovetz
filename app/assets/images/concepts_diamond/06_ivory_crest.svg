@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FAF7F0"/>
+      <stop offset="100%" stop-color="#EAE3D2"/>
+    </linearGradient>
+    <linearGradient id="navy6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="gold6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <filter id="sh6" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0F172A" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg6)"/>
+  <rect x="12" y="12" width="488" height="488" rx="100" fill="none" stroke="#D6CEBC" stroke-width="4"/>
+
+  <g filter="url(#sh6)">
+    <!-- Padlock Shackle in Navy/Gold -->
+    <path d="M196 176 V134 C196 96, 316 96, 316 134 V176" fill="none" stroke="url(#gold6)" stroke-width="24" stroke-linecap="round"/>
+    
+    <!-- Navy Shield-Lock Body -->
+    <path d="M126 170 H386 V290 C386 364, 256 420, 256 420 C256 420, 126 364, 126 290 Z" fill="url(#navy6)" stroke="url(#gold6)" stroke-width="8"/>
+    
+    <!-- Open White Book inside Shield -->
+    <path d="M164 318 C202 302, 234 310, 256 326 C278 310, 310 302, 348 318 V240 C310 224, 278 232, 256 248 C234 232, 202 224, 164 240 Z" fill="#FFFFFF"/>
+    
+    <!-- Sparkling Cyan Diamond floating right above the book spine -->
+    <g transform="translate(256,200) scale(0.72)">
+      <!-- Top Table -->
+      <polygon points="-42,-45 42,-45 64,-12 -64,-12" fill="#E0F2FE"/>
+      <polygon points="-42,-45 0,-45 -24,-12 -64,-12" fill="#7DD3FC"/>
+      <polygon points="42,-45 0,-45 24,-12 64,-12" fill="#38BDF8"/>
+      <polygon points="-24,-12 24,-12 0,-45" fill="#BAE6FD"/>
+      <!-- Bottom Pavilion -->
+      <polygon points="-64,-12 -24,-12 0,58" fill="#0284C7"/>
+      <polygon points="-24,-12 24,-12 0,58" fill="#38BDF8"/>
+      <polygon points="24,-12 64,-12 0,58" fill="#0369A1"/>
+      <!-- Crisp Specular Highlight -->
+      <line x1="-64" y1="-12" x2="64" y2="-12" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.7"/>
+      <polygon points="-42,-45 42,-45 64,-12 0,58 -64,-12" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.5" stroke-linejoin="round"/>
+    </g>
+    
+    <!-- Monogram K below the book -->
+    <path d="M242 344 V376 M242 360 L270 344 M252 354 L272 376" stroke="url(#gold6)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>

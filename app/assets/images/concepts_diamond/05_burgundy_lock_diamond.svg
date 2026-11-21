@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B0718"/>
+      <stop offset="100%" stop-color="#1A030B"/>
+    </linearGradient>
+    <linearGradient id="gold5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <filter id="sh5" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg5)"/>
+
+  <g filter="url(#sh5)">
+    <!-- Thick Leather Bible / Codex -->
+    <rect x="120" y="100" width="272" height="312" rx="28" fill="#FFFBEB"/>
+    <rect x="112" y="100" width="256" height="312" rx="26" fill="#6B102E" stroke="url(#gold5)" stroke-width="6"/>
+    <!-- Spine -->
+    <rect x="144" y="100" width="8" height="312" fill="#2A0512" fill-opacity="0.5"/>
+
+    <!-- Golden Shield Lock Plate in center -->
+    <path d="M184 180 H316 V270 C316 320, 250 356, 250 356 C250 356, 184 320, 184 270 Z" fill="url(#gold5)" stroke="#4A0E1E" stroke-width="4"/>
+    
+    <!-- Faceted Amethyst Diamond inlaid on the Gold Shield -->
+    <g transform="translate(250,244) scale(0.9)">
+      <!-- Top Table -->
+      <polygon points="-42,-45 42,-45 64,-12 -64,-12" fill="#F3E8FF"/>
+      <polygon points="-42,-45 0,-45 -24,-12 -64,-12" fill="#D8B4FE"/>
+      <polygon points="42,-45 0,-45 24,-12 64,-12" fill="#A855F7"/>
+      <polygon points="-24,-12 24,-12 0,-45" fill="#E9D5FF"/>
+      <!-- Bottom Pavilion -->
+      <polygon points="-64,-12 -24,-12 0,58" fill="#7E22CE"/>
+      <polygon points="-24,-12 24,-12 0,58" fill="#A855F7"/>
+      <polygon points="24,-12 64,-12 0,58" fill="#581C87"/>
+      <!-- Crisp Specular Highlight -->
+      <line x1="-64" y1="-12" x2="64" y2="-12" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.7"/>
+      <polygon points="-42,-45 42,-45 64,-12 0,58 -64,-12" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.5" stroke-linejoin="round"/>
+    </g>
+    
+    <!-- Small bold K embossed below diamond on shield -->
+    <path d="M238 302 V326 M238 314 L262 302 M246 310 L264 326" stroke="#3B0718" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>

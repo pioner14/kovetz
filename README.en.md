@@ -54,9 +54,11 @@ Tested with JW Library backups using database schema versions 5, 8, 14 and 16 (b
 
 Download the file for your system from the [releases page](https://github.com/pioner14/kovetz/releases/latest):
 
-- `kovetz-<version>-android.apk` — allow installing from your browser on Android;
+- `kovetz-<version>-android-arm64.apk` — Android, 64-bit ARM (almost all modern phones and tablets); allow installing from your browser;
 - `kovetz-<version>-windows-x64.zip` — unzip and run `kovetz.exe`;
 - `kovetz-<version>-linux-x64.tar.gz` — unpack and run `kovetz`.
+
+> **Android is built for arm64 only.** That covers almost all phones and tablets from recent years, and the file is about three times smaller (around 23 MB). If you need another architecture (armeabi-v7a, x86_64), open an [issue](https://github.com/pioner14/kovetz/issues) and I will build it for you.
 
 SHA-256 checksums are published next to the files. Illustrated guide: https://pioner14.github.io/kovetz-site/
 

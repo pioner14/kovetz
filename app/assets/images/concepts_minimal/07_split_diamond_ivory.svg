@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#FAF7F0"/>
+  <rect x="12" y="12" width="488" height="488" rx="100" fill="none" stroke="#E5DFD3" stroke-width="4"/>
+  <!-- Left Half: Sapphire Blue -->
+  <polygon points="150,144 256,144 256,406 96,216" fill="#1D4ED8"/>
+  <polygon points="150,144 256,144 256,216 96,216" fill="#3B82F6"/>
+  <!-- Right Half: Warm Amber Gold -->
+  <polygon points="256,144 362,144 416,216 256,406" fill="#D97706"/>
+  <polygon points="256,144 362,144 416,216 256,216" fill="#FBBF24"/>
+  <!-- Clean Center Seam / Fold -->
+  <line x1="256" y1="144" x2="256" y2="406" stroke="#FAF7F0" stroke-width="10"/>
+</svg>

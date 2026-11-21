@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="gold1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <filter id="sh1" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg1)"/>
+  
+  <g filter="url(#sh1)">
+    <!-- Golden Padlock Shackle -->
+    <path d="M184 210 V156 C184 110, 328 110, 328 156 V210" fill="none" stroke="url(#gold1)" stroke-width="30" stroke-linecap="round"/>
+    
+    <!-- Book Body as Padlock -->
+    <!-- Back cover / white pages edge on right -->
+    <rect x="136" y="196" width="248" height="220" rx="28" fill="#E2E8F0"/>
+    <!-- Spine / Main Blue-Slate Book Cover -->
+    <rect x="128" y="196" width="232" height="220" rx="26" fill="#1E3A8A" stroke="url(#gold1)" stroke-width="6"/>
+    <!-- Spine vertical groove -->
+    <rect x="156" y="196" width="8" height="220" fill="#0F172A" fill-opacity="0.35"/>
+    
+    <!-- Embossed Golden K in top-left/bottom-right or subtle clasp -->
+    <path d="M338 286 H386 V326 H338 C328 326, 322 318, 322 306 C322 294, 328 286, 338 286 Z" fill="url(#gold1)"/>
+    <circle cx="342" cy="306" r="7" fill="#1E3A8A"/>
+
+    <!-- Faceted Diamond inlaid in center -->
+    <g transform="translate(244,298) scale(1.15)">
+      <!-- Top Table -->
+      <polygon points="-42,-45 42,-45 64,-12 -64,-12" fill="#E0F2FE"/>
+      <polygon points="-42,-45 0,-45 -24,-12 -64,-12" fill="#7DD3FC"/>
+      <polygon points="42,-45 0,-45 24,-12 64,-12" fill="#38BDF8"/>
+      <polygon points="-24,-12 24,-12 0,-45" fill="#BAE6FD"/>
+      <!-- Bottom Pavilion -->
+      <polygon points="-64,-12 -24,-12 0,58" fill="#0284C7"/>
+      <polygon points="-24,-12 24,-12 0,58" fill="#38BDF8"/>
+      <polygon points="24,-12 64,-12 0,58" fill="#0369A1"/>
+      <!-- Crisp Specular Highlight -->
+      <line x1="-64" y1="-12" x2="64" y2="-12" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.7"/>
+      <polygon points="-42,-45 42,-45 64,-12 0,58 -64,-12" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.5" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

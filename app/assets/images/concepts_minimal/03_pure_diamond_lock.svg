@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="gold3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg3)"/>
+  <!-- Simple Shackle -->
+  <path d="M196 196 V146 C196 102, 316 102, 316 146 V196" fill="none" stroke="#94A3B8" stroke-width="32" stroke-linecap="round"/>
+  <!-- Clean Geometric Diamond Body -->
+  <polygon points="160,188 352,188 410,256 256,418 102,256" fill="url(#gold3)"/>
+  <polygon points="160,188 352,188 318,256 194,256" fill="#FEF08A"/>
+  <polygon points="194,256 318,256 256,418" fill="#F59E0B"/>
+</svg>

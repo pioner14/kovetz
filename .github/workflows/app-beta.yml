@@ -103,10 +103,10 @@ jobs:
         if: matrix.target == 'Android'
         run: |
           if [ -f android/key.properties ]; then
-            flutter build apk --release
+            flutter build apk --release --target-platform android-arm64
             cp build/app/outputs/flutter-apk/app-release.apk build/kovetz-android.apk
           else
-            flutter build apk --debug
+            flutter build apk --debug --target-platform android-arm64
             cp build/app/outputs/flutter-apk/app-debug.apk build/kovetz-android.apk
           fi
 

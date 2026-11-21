@@ -2,7 +2,7 @@ name: Release
 
 # Publishes a GitHub release with the Linux, Windows and Android builds. The
 # app's update check reads these releases and expects the file names
-# kovetz-<version>-android.apk, -linux-x64.tar.gz and -windows-x64.zip.
+# kovetz-<version>-android-arm64.apk, -linux-x64.tar.gz and -windows-x64.zip.
 #
 # Use: bump `version:` in app/pubspec.yaml, push the commit, then
 #   git tag v0.5.1 && git push origin v0.5.1
@@ -124,8 +124,8 @@ jobs:
             echo "keyAlias=$ANDROID_KEY_ALIAS"
             echo "keyPassword=$ANDROID_KEY_PASSWORD"
           } > android/key.properties
-          flutter build apk --release
-          cp build/app/outputs/flutter-apk/app-release.apk "$RUNNER_TEMP/kovetz-${{ needs.check.outputs.version }}-android.apk"
+          flutter build apk --release --target-platform android-arm64
+          cp build/app/outputs/flutter-apk/app-release.apk "$RUNNER_TEMP/kovetz-${{ needs.check.outputs.version }}-android-arm64.apk"
 
       - uses: actions/upload-artifact@v7
         with:

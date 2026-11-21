@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg8" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#022C22"/>
+      <stop offset="100%" stop-color="#064E3B"/>
+    </linearGradient>
+    <linearGradient id="gold8" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <filter id="sh8" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg8)"/>
+
+  <g filter="url(#sh8)">
+    <!-- Open Book Base -->
+    <path d="M96 364 C162 340, 218 352, 256 374 C294 352, 350 340, 416 364 V210 C350 186, 294 198, 256 220 C218 198, 162 186, 96 210 Z" fill="#ECFDF5" stroke="url(#gold8)" stroke-width="6"/>
+    <!-- Left page K -->
+    <path d="M144 252 V314 M144 283 L184 252 M160 271 L188 314" stroke="#064E3B" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Right page Highlight lines -->
+    <rect x="290" y="254" width="88" height="14" rx="6" fill="#FACC15"/>
+    <rect x="290" y="280" width="72" height="14" rx="6" fill="#34D399"/>
+    <rect x="290" y="306" width="82" height="10" rx="5" fill="#94A3B8" fill-opacity="0.5"/>
+
+    <!-- Radiant Gold/Emerald Diamond Floating above Book Center -->
+    <g transform="translate(256,134) scale(1.0)">
+      <!-- Top Table -->
+      <polygon points="-42,-45 42,-45 64,-12 -64,-12" fill="#FEF9C3"/>
+      <polygon points="-42,-45 0,-45 -24,-12 -64,-12" fill="#FDE047"/>
+      <polygon points="42,-45 0,-45 24,-12 64,-12" fill="#FACC15"/>
+      <polygon points="-24,-12 24,-12 0,-45" fill="#FEF08A"/>
+      <!-- Bottom Pavilion -->
+      <polygon points="-64,-12 -24,-12 0,58" fill="#D97706"/>
+      <polygon points="-24,-12 24,-12 0,58" fill="#FACC15"/>
+      <polygon points="24,-12 64,-12 0,58" fill="#B45309"/>
+      <!-- Crisp Specular Highlight -->
+      <line x1="-64" y1="-12" x2="64" y2="-12" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.7"/>
+      <polygon points="-42,-45 42,-45 64,-12 0,58 -64,-12" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.5" stroke-linejoin="round"/>
+    </g>
+    
+    <!-- Small Lock Clasp at Book Bottom Center -->
+    <rect x="236" y="356" width="40" height="42" rx="8" fill="url(#gold8)" stroke="#022C22" stroke-width="4"/>
+    <path d="M244 356 V344 C244 334, 268 334, 268 344 V356" fill="none" stroke="url(#gold8)" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="256" cy="377" r="5" fill="#022C22"/>
+  </g>
+</svg>
