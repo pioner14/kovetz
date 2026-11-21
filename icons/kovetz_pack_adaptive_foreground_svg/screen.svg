@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <defs>
+    <linearGradient id="backLeather" x1="206" y1="194" x2="796" y2="824" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#355F48"/>
+      <stop offset="0.5" stop-color="#274937"/>
+      <stop offset="1" stop-color="#1B3427"/>
+    </linearGradient>
+    <linearGradient id="frontLeather" x1="206" y1="512" x2="700" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#264736"/>
+      <stop offset="0.08" stop-color="#58856B"/>
+      <stop offset="0.22" stop-color="#426D55"/>
+      <stop offset="0.65" stop-color="#2E5440"/>
+      <stop offset="1" stop-color="#213E2E"/>
+    </linearGradient>
+    <linearGradient id="frontVerticalShade" x1="450" y1="260" x2="450" y2="824" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="0.5" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.22"/>
+    </linearGradient>
+    <linearGradient id="brassPlate" x1="536" y1="460" x2="644" y2="592" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E5CB9B"/>
+      <stop offset="0.5" stop-color="#C8A56A"/>
+      <stop offset="1" stop-color="#A68249"/>
+    </linearGradient>
+    <linearGradient id="brassStrap" x1="646" y1="520" x2="806" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C49F63"/>
+      <stop offset="0.45" stop-color="#E9D1A3"/>
+      <stop offset="0.75" stop-color="#C09A5E"/>
+      <stop offset="1" stop-color="#7B5C2E"/>
+    </linearGradient>
+    <filter id="folioShadow" x="150" y="160" width="720" height="730" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#191C1B" flood-opacity="0.18"/>
+    </filter>
+    <filter id="coverShadow" x="190" y="240" width="540" height="600" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="8" dy="4" stdDeviation="10" flood-color="#0D1A13" flood-opacity="0.35"/>
+    </filter>
+    <filter id="claspShadow" x="516" y="400" width="315" height="225" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="-2" dy="10" stdDeviation="10" flood-color="#0C1912" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#folioShadow)">
+    <rect x="206" y="194" width="590" height="630" rx="124" fill="url(#backLeather)"/>
+    <rect x="220" y="208" width="562" height="602" rx="112" stroke="#5B866E" stroke-width="3" stroke-dasharray="7 6" stroke-opacity="0.55"/>
+    <rect x="236" y="220" width="532" height="578" rx="98" fill="#172B20"/>
+    <rect x="314" y="280" width="448" height="466" rx="22" fill="#D5C5A3"/>
+    <rect x="294" y="256" width="452" height="510" rx="22" fill="#E5D6B7"/>
+    <rect x="274" y="232" width="456" height="552" rx="22" fill="#F3E8CE"/>
+    <g filter="url(#coverShadow)">
+      <path d="M206 296C206 268 214 252 226 266C236 276 254 276 278 276H604C657 276 700 319 700 372V728C700 781 657 824 604 824H330C261.5 824 206 768.5 206 700V296Z" fill="url(#frontLeather)"/>
+      <path d="M206 296C206 268 214 252 226 266C236 276 254 276 278 276H604C657 276 700 319 700 372V728C700 781 657 824 604 824H330C261.5 824 206 768.5 206 700V296Z" fill="url(#frontVerticalShade)"/>
+      <path d="M222 288C234 294 252 294 278 294H602C646 294 682 330 682 374V726C682 770 646 806 602 806H332C271 806 222 757 222 696V288Z" stroke="#68957B" stroke-width="3" stroke-dasharray="7 6" stroke-opacity="0.65"/>
+    </g>
+  </g>
+  <g filter="url(#claspShadow)">
+    <rect x="536" y="460" width="108" height="132" rx="22" fill="url(#brassPlate)"/>
+    <rect x="537.5" y="461.5" width="105" height="129" rx="20.5" stroke="#F6E8C7" stroke-opacity="0.5" stroke-width="2"/>
+    <path d="M647 460H712C764 460 806 436 806 410V534C806 566 760 592 706 592H647V460Z" fill="url(#brassStrap)"/>
+    <line x1="645.5" y1="460" x2="645.5" y2="592" stroke="#6E5025" stroke-width="2.5"/>
+    <circle cx="558" cy="482" r="7" fill="#8C6A36" stroke="#ECD7AE" stroke-width="1.5"/>
+    <circle cx="558" cy="570" r="7" fill="#8C6A36" stroke="#ECD7AE" stroke-width="1.5"/>
+    <circle cx="664" cy="482" r="7" fill="#8C6A36" stroke="#ECD7AE" stroke-width="1.5"/>
+    <circle cx="664" cy="570" r="7" fill="#8C6A36" stroke="#ECD7AE" stroke-width="1.5"/>
+  </g>
+</svg>
