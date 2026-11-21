@@ -336,6 +336,8 @@ Scroll through the pages for your topic. There are no buttons to press on this b
 
 1 — the tag name. 2 — the note text. You can simply read here.
 
+> **Tip.** Every PDF page has a «Table of contents» button at the bottom and a button with the current tag name. After jumping through a link, press «Table of contents» to return to the top. The tags are also listed in the bookmarks panel of your PDF reader.
+
 ## Language, theme and updates
 
 You can change the settings whenever you like.

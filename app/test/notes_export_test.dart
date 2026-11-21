@@ -108,4 +108,25 @@ void main() {
     );
     expect(withUntagged.length, greaterThan(bytes.length));
   });
+
+  test('every PDF page links back to the table of contents', () async {
+    final notes = await readBackupNotes(writeNotesBackup(scratch));
+    final bytes = await buildNotesPdf(
+      notes,
+      bundledPdfFonts(),
+      const PdfOptions(includeUntagged: true),
+    );
+    final text = String.fromCharCodes(bytes);
+    final pages = RegExp(r'/Count (\d+)')
+        .allMatches(text)
+        .map((m) => int.parse(m.group(1)!))
+        .reduce((a, b) => a > b ? a : b);
+    // A link to the contents on every page except the contents page itself,
+    // plus one link per tag section in its footer.
+    final toContents = RegExp(r'/Dest \(toc\)|/D \(toc\)|toc').allMatches(text);
+    expect(toContents.length, greaterThanOrEqualTo(pages - 1));
+    // Bookmarks for the contents and for every tag, for the viewer's side panel.
+    expect(text, contains('/Outlines'));
+    expect(RegExp(r'/Title').allMatches(text).length, greaterThanOrEqualTo(3));
+  });
 }

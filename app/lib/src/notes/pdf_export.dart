@@ -124,12 +124,55 @@ Future<Uint8List> _build(
   const margin = pw.EdgeInsets.fromLTRB(56, 56, 56, 64);
   const maxPages = 100000;
 
-  pw.Widget footer(pw.Context context) => pw.Align(
-    alignment: pw.Alignment.center,
-    child: pw.Text(
-      '${context.pageNumber}',
-      style: pw.TextStyle(font: sans, fontSize: 9, color: _grey),
+  // Every page of a long book carries a way back: a link to the table of
+  // contents and, inside a tag section, a link to the start of that section.
+  // PDF viewers on phones often have no "back" button after a link jump.
+  pw.Widget pill(String label, String destination) => pw.Link(
+    destination: destination,
+    child: pw.Container(
+      padding: const pw.EdgeInsets.symmetric(horizontal: 9, vertical: 4),
+      decoration: pw.BoxDecoration(
+        border: pw.Border.all(color: _green, width: 0.8),
+        borderRadius: pw.BorderRadius.circular(10),
+      ),
+      child: pw.Text(
+        label,
+        maxLines: 1,
+        style: pw.TextStyle(
+          font: sansBold,
+          fontSize: 8.5,
+          color: _green,
+          fontFallback: fallbacks,
+        ),
+      ),
     ),
+  );
+
+  pw.Widget footer(pw.Context context, {int? tagIndex}) => pw.Row(
+    crossAxisAlignment: pw.CrossAxisAlignment.center,
+    children: [
+      pw.Expanded(
+        child: pw.Align(
+          alignment: pw.Alignment.centerLeft,
+          child: pill(tr('К оглавлению', 'Table of contents'), 'toc'),
+        ),
+      ),
+      pw.Text(
+        '${context.pageNumber}',
+        style: pw.TextStyle(font: sans, fontSize: 9, color: _grey),
+      ),
+      pw.Expanded(
+        child: pw.Align(
+          alignment: pw.Alignment.centerRight,
+          child: tagIndex == null
+              ? pw.SizedBox()
+              : pw.ConstrainedBox(
+                  constraints: const pw.BoxConstraints(maxWidth: 150),
+                  child: pill(tags[tagIndex], 'tag-$tagIndex'),
+                ),
+        ),
+      ),
+    ],
   );
 
   final dates = [for (final note in selected) ?note.created]..sort();
@@ -145,7 +188,12 @@ Future<Uint8List> _build(
       margin: margin,
       footer: footer,
       build: (context) => [
-        pw.SizedBox(height: 40),
+        pw.Outline(
+          name: 'toc',
+          title: tr('Оглавление', 'Table of contents'),
+          level: 0,
+          child: pw.SizedBox(height: 40),
+        ),
         pw.Text(
           tr('Личный сборник', 'Personal collection').toUpperCase(),
           style: pw.TextStyle(
@@ -224,10 +272,12 @@ Future<Uint8List> _build(
         maxPages: maxPages,
         pageFormat: PdfPageFormat.a4,
         margin: margin,
-        footer: footer,
+        footer: (context) => footer(context, tagIndex: i),
         build: (context) => [
-          pw.Anchor(
+          pw.Outline(
             name: 'tag-$i',
+            title: tag,
+            level: 0,
             child: pw.Column(
               crossAxisAlignment: pw.CrossAxisAlignment.start,
               children: [
