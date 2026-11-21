@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="pageGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="50%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <filter id="sh1" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg1)"/>
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="url(#gold)" stroke-width="3" stroke-opacity="0.3"/>
+
+  <!-- Open Book Base with shadow -->
+  <g filter="url(#sh1)">
+    <!-- Book Cover edges -->
+    <path d="M84 374 C150 354, 210 364, 256 384 C302 364, 362 354, 428 374 V174 C362 154, 302 164, 256 184 C210 164, 150 154, 84 174 Z" fill="#334155"/>
+    <!-- Open White Pages -->
+    <path d="M92 362 C154 344, 212 354, 256 374 C300 354, 358 344, 420 362 V162 C358 144, 300 154, 256 174 C212 154, 154 144, 92 162 Z" fill="url(#pageGrad)"/>
+    <!-- Spine center shadow -->
+    <path d="M252 174 H260 V374 H252 Z" fill="#94A3B8" fill-opacity="0.5"/>
+  </g>
+
+  <!-- Left Page: JWL Highlighters (Yellow, Cyan) -->
+  <rect x="120" y="200" width="100" height="16" rx="6" fill="#FACC15" fill-opacity="0.9"/>
+  <rect x="120" y="228" width="80" height="12" rx="4" fill="#94A3B8" fill-opacity="0.4"/>
+  <rect x="120" y="252" width="104" height="16" rx="6" fill="#38BDF8" fill-opacity="0.9"/>
+  <rect x="120" y="280" width="92" height="12" rx="4" fill="#94A3B8" fill-opacity="0.4"/>
+
+  <!-- Right Page: JWL Highlighters (Mint Green, Rose Pink) -->
+  <rect x="288" y="200" width="104" height="16" rx="6" fill="#34D399" fill-opacity="0.9"/>
+  <rect x="288" y="228" width="76" height="12" rx="4" fill="#94A3B8" fill-opacity="0.4"/>
+  <rect x="288" y="252" width="96" height="16" rx="6" fill="#FB7185" fill-opacity="0.9"/>
+  <rect x="288" y="280" width="100" height="12" rx="4" fill="#94A3B8" fill-opacity="0.4"/>
+
+  <!-- Intertwined ribbon bookmarks falling from center bottom -->
+  <!-- Blue ribbon -->
+  <path d="M248 374 C248 410, 220 420, 230 450 L246 438 L262 450 C256 430, 252 410, 252 374 Z" fill="#0284C7"/>
+  <!-- Golden ribbon wrapping over -->
+  <path d="M256 374 C256 400, 280 415, 270 445 L286 435 L300 448 C295 425, 270 405, 260 374 Z" fill="url(#gold)"/>
+  <!-- Central golden star / cross of union -->
+  <circle cx="256" cy="374" r="12" fill="url(#gold)"/>
+</svg>

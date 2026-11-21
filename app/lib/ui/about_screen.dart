@@ -118,6 +118,13 @@ class AboutScreen extends StatelessWidget {
               ),
               const Divider(),
               row(
+                Icons.coffee_rounded,
+                context.tr('☕ Угостить кофе', '☕ Buy me a coffee'),
+                action: Icons.open_in_new_rounded,
+                onTap: () => openLink(context, Uri.parse(appDonateUrl)),
+              ),
+              const Divider(),
+              row(
                 Icons.balance_rounded,
                 context.tr('Лицензия — $appLicense', 'License — $appLicense'),
               ),

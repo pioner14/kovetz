@@ -7,4 +7,5 @@ const appDeveloper = 'Nikolai Golotaistrov';
 const appRepository = 'https://github.com/pioner14/kovetz';
 const appGuideUrl = 'https://pioner14.github.io/kovetz-site/';
 const appSiteUrl = 'https://pioner14.github.io/kovetz-site/';
+const appDonateUrl = 'https://paypal.me/NikolaiGolotaistrov';
 const appLicense = 'MIT';

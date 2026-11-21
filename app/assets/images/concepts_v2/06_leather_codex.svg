@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A0812"/>
+      <stop offset="100%" stop-color="#4A121E"/>
+    </linearGradient>
+    <linearGradient id="gold6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <filter id="sh6" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg6)"/>
+
+  <g filter="url(#sh6)">
+    <!-- Big Leather Book Block (Perspective / Side View) -->
+    <!-- Back leather cover -->
+    <rect x="110" y="110" width="280" height="300" rx="26" fill="#1C070D" stroke="url(#gold6)" stroke-width="3"/>
+    
+    <!-- Colorful Device/Section Tabs sticking out on the right -->
+    <!-- Yellow tab (Notes) -->
+    <path d="M380 150 H416 C422 150, 426 154, 426 160 V184 C426 190, 422 194, 416 194 H380 Z" fill="#FACC15"/>
+    <!-- Cyan tab (Highlights) -->
+    <path d="M380 210 H426 C432 210, 436 214, 436 220 V244 C436 250, 432 254, 426 254 H380 Z" fill="#38BDF8"/>
+    <!-- Emerald tab (Backup Sync) -->
+    <path d="M380 270 H416 C422 270, 426 274, 426 280 V304 C426 310, 422 314, 416 314 H380 Z" fill="#34D399"/>
+    <!-- Coral tab (Export) -->
+    <path d="M380 330 H426 C432 330, 436 334, 436 340 V364 C436 370, 432 374, 426 374 H380 Z" fill="#FB7185"/>
+
+    <!-- Front Leather Cover -->
+    <rect x="100" y="110" width="270" height="300" rx="26" fill="#3B0D18" stroke="url(#gold6)" stroke-width="4"/>
+    <!-- Decorative Gold Filigree Corner -->
+    <path d="M116 150 V126 H140" stroke="url(#gold6)" stroke-width="4" fill="none"/>
+    <path d="M116 370 V394 H140" stroke="url(#gold6)" stroke-width="4" fill="none"/>
+    
+    <!-- Central Golden Emblem: Cross-Knot of Kovetz -->
+    <circle cx="235" cy="260" r="42" fill="none" stroke="url(#gold6)" stroke-width="5"/>
+    <path d="M235 224 V296 M199 260 H271" stroke="url(#gold6)" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="235" cy="260" r="12" fill="url(#gold6)"/>
+  </g>
+</svg>
