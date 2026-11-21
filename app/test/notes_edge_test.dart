@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:backup_merge/notes_export.dart';
-import 'package:backup_merge/src/notes/bible_books.dart';
-import 'package:backup_merge/src/notes/notes_model.dart' show extractNotes;
+import 'package:kovetz/notes_export.dart';
+import 'package:kovetz/src/notes/bible_books.dart';
+import 'package:kovetz/src/notes/notes_model.dart' show extractNotes;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqlite3/sqlite3.dart';
 

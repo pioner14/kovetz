@@ -2,11 +2,11 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:backup_merge/main.dart';
-import 'package:backup_merge/ui/home_screen.dart' show LanguageChip;
-import 'package:backup_merge/ui/theme.dart' show interfaceFont;
-import 'package:backup_merge/ui/widgets.dart';
-import 'package:backup_merge/updates.dart';
+import 'package:kovetz/main.dart';
+import 'package:kovetz/ui/home_screen.dart' show LanguageChip;
+import 'package:kovetz/ui/theme.dart' show interfaceFont;
+import 'package:kovetz/ui/widgets.dart';
+import 'package:kovetz/updates.dart';
 import 'package:file_selector_platform_interface/file_selector_platform_interface.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';

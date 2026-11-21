@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:backup_merge/main.dart';
-import 'package:backup_merge/ui/export_notes_screen.dart';
+import 'package:kovetz/main.dart';
+import 'package:kovetz/ui/export_notes_screen.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 

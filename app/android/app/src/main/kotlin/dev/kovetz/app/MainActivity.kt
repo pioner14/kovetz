@@ -1,4 +1,4 @@
-package dev.backupmerge.backup_merge
+package dev.kovetz.app
 
 import android.app.Activity
 import android.content.ActivityNotFoundException
@@ -26,7 +26,7 @@ class MainActivity : FlutterActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "dev.backupmerge/export")
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "dev.kovetz/export")
             .setMethodCallHandler { call, reply ->
                 if (call.method != "save" && call.method != "savePair") {
                     reply.notImplemented()

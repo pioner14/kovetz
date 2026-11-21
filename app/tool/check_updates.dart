@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:backup_merge/updates.dart';
+import 'package:kovetz/updates.dart';
 
 /// Developer tool: asks GitHub for the newest release, like the app does.
 Future<void> main() async {

@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:archive/archive.dart';
-import 'package:backup_merge/merge.dart';
-import 'package:backup_merge/schema.dart';
+import 'package:kovetz/merge.dart';
+import 'package:kovetz/schema.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqlite3/sqlite3.dart';
 

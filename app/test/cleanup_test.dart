@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:backup_merge/cleanup.dart';
+import 'package:kovetz/cleanup.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

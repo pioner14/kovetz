@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:backup_merge/export.dart';
+import 'package:kovetz/export.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:backup_merge/merge.dart';
+import 'package:kovetz/merge.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/merge_fixtures.dart';

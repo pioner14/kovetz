@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:backup_merge/merge.dart';
+import 'package:kovetz/merge.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter_test/flutter_test.dart';
 

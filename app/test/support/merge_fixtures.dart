@@ -3,8 +3,8 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:archive/archive.dart';
-import 'package:backup_merge/merge.dart';
-import 'package:backup_merge/notes_export.dart' show PdfFonts;
+import 'package:kovetz/merge.dart';
+import 'package:kovetz/notes_export.dart' show PdfFonts;
 import 'package:crypto/crypto.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqlite3/sqlite3.dart';

@@ -68,7 +68,7 @@ keyPassword=…
 
 В GitHub откройте **Actions → Flutter beta builds → Run workflow**. Для ручного запуска workflow должен присутствовать в основной ветке. Он также запускается при изменении приложения или workflow в pull request. Сборки появляются в разделе **Artifacts** конкретного запуска и хранятся 14 дней. Доступ к скачиванию определяется видимостью репозитория и правами пользователя.
 
-- **Linux:** распакуйте архив `kovetz-linux-x64.tar.gz` и запустите `./bundle/backup_merge`. Оставьте рядом каталоги `data` и `lib`. Сборка рассчитана на x86-64 и собирается на Ubuntu 24.04.
+- **Linux:** распакуйте архив `kovetz-linux-x64.tar.gz` и запустите `./bundle/kovetz`. Оставьте рядом каталоги `data` и `lib`. Сборка рассчитана на x86-64 и собирается на Ubuntu 24.04.
 - **Windows:** распакуйте артефакт и запустите EXE из распакованной папки. DLL и каталог `data` должны лежать рядом. На компьютере тестировщика может потребоваться [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist).
 - **Android:** установите APK `kovetz-android.apk` на тестовое устройство, например командой `adb install kovetz-android.apk`. Тестовый APK подписывается отладочным ключом. Если ключ предыдущей сборки отличается, ее нужно удалить перед установкой.
 

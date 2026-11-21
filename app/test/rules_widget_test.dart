@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:backup_merge/main.dart';
+import 'package:kovetz/main.dart';
 import 'package:file_selector_platform_interface/file_selector_platform_interface.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';

@@ -227,7 +227,7 @@ class _MergeScreenState extends State<MergeScreen> {
     try {
       final filename = path.basename(result.archivePath);
       if (Platform.isAndroid) {
-        const channel = MethodChannel('dev.backupmerge/export');
+        const channel = MethodChannel('dev.kovetz/export');
         final saved = await channel.invokeMethod<Object?>('savePair', {
           'path': result.archivePath,
           'reportPath': result.reportPath,

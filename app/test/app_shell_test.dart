@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:backup_merge/app_info.dart';
-import 'package:backup_merge/main.dart';
-import 'package:backup_merge/ui/info_screens.dart';
-import 'package:backup_merge/ui/open_link.dart';
+import 'package:kovetz/app_info.dart';
+import 'package:kovetz/main.dart';
+import 'package:kovetz/ui/info_screens.dart';
+import 'package:kovetz/ui/open_link.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';

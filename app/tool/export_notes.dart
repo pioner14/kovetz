@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:backup_merge/notes_export.dart';
+import 'package:kovetz/notes_export.dart';
 
 /// Developer tool: `dart run tool/export_notes.dart BACKUP FOLDER [--all]
 /// [--pdf FILE]` writes the Markdown export of a backup's tagged notes (all

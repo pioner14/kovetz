@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "dev.backupmerge" "\0"
+            VALUE "CompanyName", "Nikolai Golotaistrov" "\0"
             VALUE "FileDescription", "Kovetz" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "backup_merge" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 dev.backupmerge. All rights reserved." "\0"
-            VALUE "OriginalFilename", "backup_merge.exe" "\0"
-            VALUE "ProductName", "backup_merge" "\0"
+            VALUE "InternalName", "Kovetz" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 Nikolai Golotaistrov. All rights reserved." "\0"
+            VALUE "OriginalFilename", "kovetz.exe" "\0"
+            VALUE "ProductName", "Kovetz" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

@@ -3,8 +3,8 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:archive/archive.dart';
-import 'package:backup_merge/archive_limits.dart';
-import 'package:backup_merge/merge.dart';
+import 'package:kovetz/archive_limits.dart';
+import 'package:kovetz/merge.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter_test/flutter_test.dart';
 

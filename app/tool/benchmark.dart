@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:backup_merge/merge.dart';
+import 'package:kovetz/merge.dart';
 
 /// Developer benchmark: merges real backups from a local folder that is never
 /// committed. Usage: `dart run tool/benchmark.dart <folder> [all|pair] [label]`

@@ -1,7 +1,7 @@
 // Developer tool, run via flutter test to reuse the synthetic test fixtures.
 import 'dart:io';
 
-import 'package:backup_merge/notes_export.dart';
+import 'package:kovetz/notes_export.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../test/support/merge_fixtures.dart';

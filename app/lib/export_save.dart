@@ -6,7 +6,7 @@ import 'package:path/path.dart' as path;
 
 import 'notes_export.dart';
 
-const _channel = MethodChannel('dev.backupmerge/export');
+const _channel = MethodChannel('dev.kovetz/export');
 
 /// Saves [bytes] to a file the person picks. Returns the saved path on
 /// desktop, an empty string on Android (the system hides the location) and

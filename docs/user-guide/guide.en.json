@@ -68,7 +68,7 @@
           "type": "step",
           "number": 6,
           "title": "Windows · Start Kovetz",
-          "text": "Double-click “backup_merge.exe” in that folder. Leave the other files beside it."
+          "text": "Double-click “kovetz.exe” in that folder. Leave the other files beside it."
         },
         {
           "type": "step",
@@ -86,7 +86,7 @@
           "type": "step",
           "number": 9,
           "title": "Linux · Start Kovetz",
-          "text": "Open the extracted folder and then its “bundle” folder. Run “backup_merge” and leave the “data” and “lib” folders beside it."
+          "text": "Open the extracted folder and then its “bundle” folder. Run “kovetz” and leave the “data” and “lib” folders beside it."
         },
         {
           "type": "step",

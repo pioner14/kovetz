@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:backup_merge/main.dart';
-import 'package:backup_merge/ui/theme.dart';
-import 'package:backup_merge/ui/updates_screen.dart';
-import 'package:backup_merge/updates.dart';
+import 'package:kovetz/main.dart';
+import 'package:kovetz/ui/theme.dart';
+import 'package:kovetz/ui/updates_screen.dart';
+import 'package:kovetz/updates.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 

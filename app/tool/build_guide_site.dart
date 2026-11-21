@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:backup_merge/app_info.dart';
+import 'package:kovetz/app_info.dart';
 
 import 'guide_data.dart';
 

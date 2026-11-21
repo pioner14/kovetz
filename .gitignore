@@ -29,7 +29,6 @@ wheels/
 *.manifest
 !/app/windows/runner/runner.exe.manifest
 *.spec
-!jwl_backup_merger.spec
 
 # Тесты
 .pytest_cache/
@@ -150,8 +149,6 @@ logs/
 UserdataBackup_*/
 UserDataBackup_*/
 
-# Retain archived Python build recipes as historical source
-!/legacy/python/*.spec
 
 # Old binaries and archives must not reach the public repository
 /*.exe

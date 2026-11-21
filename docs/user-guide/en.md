@@ -42,7 +42,7 @@ Right-click the ZIP and choose “Extract All”. Open the folder that was creat
 
 ### 6. Windows · Start Kovetz
 
-Double-click “backup_merge.exe” in that folder. Leave the other files beside it.
+Double-click “kovetz.exe” in that folder. Leave the other files beside it.
 
 ### 7. Linux · Download the archive
 
@@ -54,7 +54,7 @@ In Downloads, right-click the archive. Choose “Extract Here” or a similar op
 
 ### 9. Linux · Start Kovetz
 
-Open the extracted folder and then its “bundle” folder. Run “backup_merge” and leave the “data” and “lib” folders beside it.
+Open the extracted folder and then its “bundle” folder. Run “kovetz” and leave the “data” and “lib” folders beside it.
 
 ### 10. Update · Check the version
 
