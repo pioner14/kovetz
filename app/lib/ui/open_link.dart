@@ -10,7 +10,7 @@ Future<bool> Function(Uri) linkLauncher = (uri) =>
     launchUrl(uri, mode: LaunchMode.externalApplication);
 
 Future<void> openGuide(BuildContext context) =>
-    openLink(context, Uri.parse(appGuideUrl).resolve(context.tr('ru/', 'en/')));
+    openLink(context, Uri.parse(appGuideUrl).resolve(context.tr('ru/guide/', 'en/guide/')));
 
 Future<void> openLink(BuildContext context, Uri uri) async {
   try {

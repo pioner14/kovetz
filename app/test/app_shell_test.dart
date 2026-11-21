@@ -87,7 +87,7 @@ void main() {
         opened.add(uri);
         return true;
       };
-      final guide = Uri.parse('$appGuideUrl$language/');
+      final guide = Uri.parse('$appGuideUrl$language/guide/');
       await pumpApp(tester, language: language);
 
       final helpButton = find.byTooltip(help);
@@ -159,7 +159,7 @@ void main() {
         await tester.tap(find.text('Открыть полное руководство'));
         await tester.pumpAndSettle();
 
-        const guide = '${appGuideUrl}ru/';
+        const guide = '${appGuideUrl}ru/guide/';
         expect(copied, guide);
         expect(
           find.text('Не удалось открыть браузер. Ссылка скопирована: $guide'),

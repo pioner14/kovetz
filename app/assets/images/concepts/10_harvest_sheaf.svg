@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#376754"/>
+  <!-- Three overlapping leaves/pages bound together -->
+  <!-- Left leaf -->
+  <path d="M256 380 C180 340, 140 250, 160 160 C210 200, 240 280, 256 380 Z" fill="#BAEED6" fill-opacity="0.6"/>
+  <!-- Right leaf -->
+  <path d="M256 380 C332 340, 372 250, 352 160 C302 200, 272 280, 256 380 Z" fill="#D3E7DC" fill-opacity="0.8"/>
+  <!-- Center upright leaf -->
+  <path d="M256 390 C220 280, 220 180, 256 120 C292 180, 292 280, 256 390 Z" fill="#FCFDF9"/>
+  <!-- Golden tie / binding ring -->
+  <rect x="216" y="320" width="80" height="28" rx="14" fill="#E0A94E"/>
+</svg>

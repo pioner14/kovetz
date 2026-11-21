@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#376754"/>
+  <!-- Mobius ribbon / folded paper loop -->
+  <path d="M150 160 C150 130, 180 110, 210 120 L350 170 C380 180, 390 210, 380 240 L340 340 C330 370, 300 390, 270 380 L160 340 C130 330, 120 300, 130 270 Z" fill="none" stroke="#BAEED6" stroke-width="48" stroke-linejoin="round"/>
+  <path d="M170 340 L340 170" stroke="#FCFDF9" stroke-width="48" stroke-linecap="round"/>
+  <circle cx="256" cy="256" r="24" fill="#376754"/>
+</svg>

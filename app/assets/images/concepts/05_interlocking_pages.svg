@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#376754"/>
+  <!-- Left page with teeth -->
+  <path d="M120 150 C120 130, 136 116, 156 116 H246 V180 H286 V230 H246 V280 H286 V330 H246 V396 H156 C136 396, 120 380, 120 360 Z" fill="#FCFDF9"/>
+  <!-- Right page interlocking -->
+  <path d="M392 150 C392 130, 376 116, 356 116 H266 V160 H306 V210 H266 V260 H306 V310 H266 V396 H356 C376 396, 392 380, 392 360 Z" fill="#BAEED6"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#376754"/>
+  <!-- Left Scroll -->
+  <rect x="110" y="140" width="64" height="232" rx="32" fill="#BAEED6"/>
+  <!-- Right Scroll -->
+  <rect x="338" y="140" width="64" height="232" rx="32" fill="#BAEED6"/>
+  <!-- Unrolled parchment connecting them -->
+  <path d="M142 172 C200 230, 312 230, 370 172 L370 340 C312 398, 200 398, 142 340 Z" fill="#FCFDF9" fill-opacity="0.95"/>
+  <!-- Center bookmark seal -->
+  <path d="M236 190 H276 V310 L256 290 L236 310 Z" fill="#376754"/>
+</svg>

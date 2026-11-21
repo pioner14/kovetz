@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#376754"/>
+  <!-- Vertical stem (the anchor / merged book spine) -->
+  <rect x="116" y="116" width="68" height="280" rx="24" fill="#FCFDF9"/>
+  <!-- Top incoming branch (device A) -->
+  <path d="M396 140 C340 140, 270 190, 216 236 L216 196 C260 156, 330 116, 396 116 Z" fill="#BAEED6"/>
+  <path d="M216 220 L376 116 C390 106, 412 116, 412 136 C412 148, 404 158, 394 164 L268 256 L394 348 C404 354, 412 364, 412 376 C412 396, 390 406, 376 396 L216 292 Z" fill="#BAEED6" fill-opacity="0.9"/>
+  <!-- Core confluence node -->
+  <circle cx="246" cy="256" r="26" fill="#FCFDF9"/>
+</svg>

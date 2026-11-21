@@ -5,5 +5,6 @@ const appVersion = '0.6.0';
 const appBuild = 13;
 const appDeveloper = 'Nikolai Golotaistrov';
 const appRepository = 'https://github.com/pioner14/kovetz';
-const appGuideUrl = 'https://pioner14.github.io/kovetz/';
+const appGuideUrl = 'https://pioner14.github.io/kovetz-site/';
+const appSiteUrl = 'https://pioner14.github.io/kovetz-site/';
 const appLicense = 'MIT';

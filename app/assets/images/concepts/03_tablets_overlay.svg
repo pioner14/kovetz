@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#376754"/>
+  <!-- Left tablet -->
+  <path d="M130 180 C130 140, 160 110, 200 110 H250 C260 110, 270 120, 270 130 V370 C270 385, 255 400, 240 400 H200 C160 400, 130 370, 130 330 Z" fill="#BAEED6" fill-opacity="0.45"/>
+  <!-- Right tablet -->
+  <path d="M382 180 C382 140, 352 110, 312 110 H262 C252 110, 242 120, 242 130 V370 C242 385, 257 400, 272 400 H312 C352 400, 382 370, 382 330 Z" fill="#BAEED6" fill-opacity="0.7"/>
+  <!-- Central union / core crystal -->
+  <rect x="212" y="160" width="88" height="192" rx="36" fill="#FCFDF9"/>
+  <path d="M256 220 L272 248 L256 276 L240 248 Z" fill="#376754"/>
+</svg>

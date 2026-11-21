@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#376754"/>
+  <!-- Document card background -->
+  <rect x="130" y="110" width="252" height="292" rx="32" fill="#FCFDF9"/>
+  <!-- Highlight bar 1 -->
+  <rect x="170" y="170" width="172" height="32" rx="10" fill="#BAEED6"/>
+  <!-- Highlight bar 2 -->
+  <rect x="170" y="226" width="132" height="32" rx="10" fill="#BAEED6"/>
+  <!-- Markdown diamond / chevron badge in corner -->
+  <path d="M290 310 L330 270 L370 310 L330 350 Z" fill="#376754"/>
+  <path d="M320 310 L330 300 L340 310" stroke="#FCFDF9" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -13,7 +13,7 @@
 
 ## Как пользоваться
 
-Подробное руководство с картинками для любого возраста: [docs/user-guide](docs/user-guide/README.md) (сайт: https://pioner14.github.io/kovetz/).
+Подробное руководство с картинками для любого возраста и сайт программы: https://pioner14.github.io/kovetz-site/ (исходники сайта: https://github.com/pioner14/kovetz-site).
 
 ## Для разработчиков
 

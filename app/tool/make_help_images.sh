@@ -162,7 +162,9 @@ annotate() {
 
 for lang in ru en; do
   shots="app/tool/shots/$lang"
-  output="docs/user-guide/images/$lang"
+  # The website lives in its own repository (kovetz-site): annotated guide images
+  # are written there. Override with SITE_REPO=/path/to/kovetz-site.
+  output="${SITE_REPO:-../kovetz-site}/assets/guide/$lang"
   mkdir -p "$output"
   for id in "${ids[@]}"; do
     annotate "$shots/$id.png" "$shots/$id.json" "$output/$id.png"

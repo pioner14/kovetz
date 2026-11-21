@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#376754"/>
+  <!-- Faceted gemstone / open book diamond -->
+  <!-- Top facet -->
+  <polygon points="256,110 376,210 256,256 136,210" fill="#BAEED6"/>
+  <!-- Left facet (page A) -->
+  <polygon points="136,210 256,256 256,402 136,310" fill="#FCFDF9"/>
+  <!-- Right facet (page B) -->
+  <polygon points="376,210 256,256 256,402 376,310" fill="#D3E7DC"/>
+  <!-- Inner core highlight -->
+  <polygon points="256,190 296,236 256,270 216,236" fill="#376754" fill-opacity="0.3"/>
+</svg>

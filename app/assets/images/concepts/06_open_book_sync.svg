@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#376754"/>
+  <!-- Open book wings -->
+  <path d="M116 330 C170 310, 220 324, 256 348 C292 324, 342 310, 396 330 V180 C342 160, 292 174, 256 198 C220 174, 170 160, 116 180 Z" fill="#FCFDF9"/>
+  <!-- Overlapping merge arrow loop above the book -->
+  <path d="M216 230 A46 46 0 0 1 296 210 L310 196" stroke="#376754" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <polygon points="316,216 314,180 280,196" fill="#376754"/>
+  <path d="M296 280 A46 46 0 0 1 216 300 L202 314" stroke="#376754" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <polygon points="196,294 198,330 232,314" fill="#376754"/>
+</svg>
