@@ -66,6 +66,10 @@
 
 Рядом лежат контрольные суммы SHA-256. Подробное руководство с картинками: https://pioner14.github.io/kovetz-site/
 
+## Ищу бета-тестеров
+
+Я хочу опубликовать Kovetz в Google Play, и для этого нужны тестировщики на Android. Если вы пользуетесь JW Library и готовы пару недель пробовать программу, [создайте обращение (Issue)](https://github.com/pioner14/kovetz/issues/new) и коротко расскажите о своём устройстве: я отвечу и объясню, что делать дальше.
+
 ## Для разработчиков
 
 Код находится в [app/](app/README.md): сборка, тесты, подпись Android, выпуск версий. Спецификации — в [docs/specs](docs/specs/app-platforms.md). Вклад в проект — [CONTRIBUTING.md](CONTRIBUTING.md). Сайт: [kovetz-site](https://github.com/pioner14/kovetz-site).

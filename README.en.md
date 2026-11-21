@@ -66,6 +66,10 @@ Download the file for your system from the [releases page](https://github.com/pi
 
 SHA-256 checksums are published next to the files. Illustrated guide: https://pioner14.github.io/kovetz-site/
 
+## Looking for beta testers
+
+I want to publish Kovetz on Google Play, and that needs Android testers. If you use JW Library and can try the app for a couple of weeks, [open an Issue](https://github.com/pioner14/kovetz/issues/new) and briefly describe your device: I will reply and explain what to do next.
+
 ## For developers
 
 The code lives in [app/](app/README.md): building, tests, Android signing, releases. Specs are in [docs/specs](docs/specs/app-platforms.md). Contributing: [CONTRIBUTING.md](CONTRIBUTING.md). Website: [kovetz-site](https://github.com/pioner14/kovetz-site).
