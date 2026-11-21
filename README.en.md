@@ -42,7 +42,7 @@ Every device keeps its own notes, highlights and bookmarks, and restoring a back
 |---|---|---|
 | **Android 7.0+** (API 24) | ✅ tested | A real Xiaomi phone: merging, restoring the result in JW Library, export |
 | **Linux x86-64** | ✅ tested | Desktop Arch Linux (Omarchy): launch and full use; build and tests in CI on Ubuntu 24.04 |
-| **Windows 10/11 x86-64** | 🧪 CI tests | Build and automated tests on Windows Server 2025; not yet tried by hand on a real PC |
+| **Windows 10/11 x86-64** | ✅ tested on Windows 11 | Latest Windows 11 build: install, launch, full use. Minimum is Windows 10 (64-bit); not tried by hand on Windows 10. Build and automated tests in CI on Windows Server 2025 |
 | Android tablets | ➖ not tested | Expected to work like the phone |
 | macOS, iOS | ❌ not supported | No builds |
 

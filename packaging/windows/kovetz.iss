@@ -8,6 +8,7 @@ AppName=Kovetz
 AppVersion={#AppVersion}
 AppPublisher=Nikolai Golotaistrov
 DefaultDirName={autopf}\Kovetz
+MinVersion=10.0
 PrivilegesRequired=lowest
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
