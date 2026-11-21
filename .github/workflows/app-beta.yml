@@ -35,6 +35,10 @@ jobs:
             runner: windows-2025
             artifact_name: kovetz-windows-x64
             artifact_path: app/build/windows/x64/runner/Release/
+          - target: macOS
+            runner: macos-15
+            artifact_name: kovetz-macos
+            artifact_path: app/build/kovetz-macos.zip
           - target: Android
             runner: ubuntu-24.04
             artifact_name: kovetz-android
@@ -66,7 +70,7 @@ jobs:
       - run: flutter pub get
 
       - name: Analyze and test
-        if: matrix.target == 'Linux' || matrix.target == 'Windows'
+        if: matrix.target != 'Android'
         run: |
           flutter analyze
           flutter test
@@ -80,6 +84,12 @@ jobs:
       - name: Build Windows bundle
         if: matrix.target == 'Windows'
         run: flutter build windows --release
+
+      - name: Build macOS app
+        if: matrix.target == 'macOS'
+        run: |
+          flutter build macos --release
+          ditto -c -k --keepParent build/macos/Build/Products/Release/kovetz.app build/kovetz-macos.zip
 
       # A release APK is built only when the signing key is configured as
       # repository secrets; otherwise the debug test APK is produced.

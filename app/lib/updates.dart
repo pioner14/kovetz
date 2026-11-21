@@ -53,6 +53,7 @@ class ReleaseInfo {
         'android' => name.endsWith('.apk'),
         'linux' => name.contains('linux') && name.endsWith('.appimage'),
         'windows' => name.contains('windows') && name.endsWith('.exe'),
+        'macos' => name.contains('macos') && name.endsWith('.zip'),
         _ => false,
       };
       if (match) return entry.value;

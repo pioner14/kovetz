@@ -15,6 +15,8 @@ String _platform() => Platform.isAndroid
     ? 'android'
     : Platform.isWindows
     ? 'windows'
+    : Platform.isMacOS
+    ? 'macos'
     : 'linux';
 
 /// Manual check, the automatic-check switch and the result.

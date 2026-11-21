@@ -2,8 +2,8 @@ name: Release
 
 # Publishes a GitHub release with the Linux, Windows and Android builds. The
 # app's update check reads these releases and expects the file names
-# kovetz-<version>-android-arm64.apk, kovetz-<version>-linux-x86_64.AppImage
-# and kovetz-<version>-windows-x64-setup.exe.
+# kovetz-<version>-android-arm64.apk, kovetz-<version>-linux-x86_64.AppImage,
+# kovetz-<version>-macos-universal.zip and kovetz-<version>-windows-x64-setup.exe.
 #
 # Use: bump `version:` in app/pubspec.yaml, push the commit, then
 #   git tag v0.5.1 && git push origin v0.5.1
@@ -56,6 +56,8 @@ jobs:
             runner: ubuntu-24.04
           - target: Windows
             runner: windows-2025
+          - target: macOS
+            runner: macos-15
           - target: Android
             runner: ubuntu-24.04
     steps:
@@ -110,6 +112,16 @@ jobs:
           & 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe' `
             '/DAppVersion=${{ needs.check.outputs.version }}' "/O$env:RUNNER_TEMP" `
             '../packaging/windows/kovetz.iss'
+
+      # Not signed or notarized (no Apple Developer account): macOS asks the
+      # user to confirm the first launch.
+      - name: Build and pack macOS
+        if: matrix.target == 'macOS'
+        shell: bash
+        run: |
+          flutter build macos --release
+          mv build/macos/Build/Products/Release/kovetz.app build/macos/Build/Products/Release/Kovetz.app
+          ditto -c -k --keepParent build/macos/Build/Products/Release/Kovetz.app "$RUNNER_TEMP/kovetz-${{ needs.check.outputs.version }}-macos-universal.zip"
 
       # A published APK must be signed with the permanent key, never with the
       # debug key, or phones would refuse to update it later.

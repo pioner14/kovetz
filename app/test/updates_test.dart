@@ -164,6 +164,7 @@ void main() {
             files: [
               'kovetz-0.6.0-linux-x86_64.AppImage',
               'kovetz-0.6.0-windows-x64-setup.exe',
+              'kovetz-0.6.0-macos-universal.zip',
               'kovetz-0.6.0-android-arm64.apk',
             ],
             body: 'Что нового',
@@ -181,6 +182,8 @@ void main() {
           ? 'android'
           : Platform.isWindows
           ? 'windows'
+          : Platform.isMacOS
+          ? 'macos'
           : 'linux';
       expect(opened.single.toString(), contains('kovetz-0.6.0-$platform'));
     });
