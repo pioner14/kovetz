@@ -1,0 +1,48 @@
+name: backup_merge
+description: "Offline JW Library backup merging for desktop and mobile."
+publish_to: 'none'
+version: 0.6.0+13
+
+environment:
+  sdk: ^3.14.0
+
+dependencies:
+  archive: ^4.7.1
+  crypto: ^3.0.8
+  desktop_drop: ^0.8.4
+  file_selector: ^1.1.0
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.3
+  material_ui: ^1.1.0
+  path: ^1.9.1
+  path_provider: ^2.1.6
+  pdf: ^3.13.1
+  sqlite3: ^3.9.1
+  url_launcher: ^6.3.3
+
+dev_dependencies:
+  file_selector_platform_interface: ^2.7.0
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    # Bundled so text looks the same offline (SIL OFL 1.1). The Noto fonts are
+    # embedded into exported PDFs, not used by the interface.
+    - family: Manrope
+      fonts:
+        - asset: assets/fonts/Manrope.ttf
+  assets:
+    - assets/images/
+    - assets/fonts/NotoSerif-Regular.ttf
+    - assets/fonts/NotoSerif-Bold.ttf
+    - assets/fonts/NotoSerif-Italic.ttf
+    - assets/fonts/NotoSans-Regular.ttf
+    - assets/fonts/NotoSans-Bold.ttf
+    - assets/fonts/NotoSansArmenian-Regular.ttf
+    - assets/fonts/NotoSansHebrew-Regular.ttf

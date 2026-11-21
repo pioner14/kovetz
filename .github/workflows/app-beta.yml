@@ -1,0 +1,120 @@
+name: Flutter beta builds
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'app/**'
+      - '.github/workflows/app-beta.yml'
+
+permissions:
+  contents: read
+
+env:
+  FLUTTER_VERSION: '3.50.0'
+
+defaults:
+  run:
+    working-directory: app
+
+jobs:
+  build:
+    name: ${{ matrix.target }}
+    runs-on: ${{ matrix.runner }}
+    env:
+      HAS_RELEASE_KEY: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: Linux
+            runner: ubuntu-24.04
+            artifact_name: kovetz-linux-x64
+            artifact_path: app/build/kovetz-linux-x64.tar.gz
+          - target: Windows
+            runner: windows-2025
+            artifact_name: kovetz-windows-x64
+            artifact_path: app/build/windows/x64/runner/Release/
+          - target: Android
+            runner: ubuntu-24.04
+            artifact_name: kovetz-android
+            artifact_path: app/build/kovetz-android.apk
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Install Linux build dependencies
+        if: matrix.target == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev
+
+      - name: Set up Java
+        if: matrix.target == 'Android'
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+
+      - run: flutter pub get
+
+      - name: Analyze and test
+        if: matrix.target == 'Linux' || matrix.target == 'Windows'
+        run: |
+          flutter analyze
+          flutter test
+
+      - name: Build Linux bundle
+        if: matrix.target == 'Linux'
+        run: |
+          flutter build linux --release
+          tar -C build/linux/x64/release -czf build/kovetz-linux-x64.tar.gz bundle
+
+      - name: Build Windows bundle
+        if: matrix.target == 'Windows'
+        run: flutter build windows --release
+
+      # A release APK is built only when the signing key is configured as
+      # repository secrets; otherwise the debug test APK is produced.
+      - name: Prepare Android release signing
+        if: matrix.target == 'Android' && env.HAS_RELEASE_KEY == 'true'
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/release.jks"
+          {
+            echo "storeFile=$RUNNER_TEMP/release.jks"
+            echo "storePassword=$ANDROID_KEYSTORE_PASSWORD"
+            echo "keyAlias=$ANDROID_KEY_ALIAS"
+            echo "keyPassword=$ANDROID_KEY_PASSWORD"
+          } > android/key.properties
+
+      - name: Build Android APK
+        if: matrix.target == 'Android'
+        run: |
+          if [ -f android/key.properties ]; then
+            flutter build apk --release
+            cp build/app/outputs/flutter-apk/app-release.apk build/kovetz-android.apk
+          else
+            flutter build apk --debug
+            cp build/app/outputs/flutter-apk/app-debug.apk build/kovetz-android.apk
+          fi
+
+      # Artifacts stay with the workflow run. This workflow has no publishing steps.
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: ${{ matrix.artifact_path }}
+          if-no-files-found: error
+          retention-days: 14

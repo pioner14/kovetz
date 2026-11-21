@@ -1,0 +1,4 @@
+# Merge tests run several real SQLite merges in background isolates. Shared
+# Windows CI runners are several times slower than a local machine, so the
+# default 30-second limit is raised for every test.
+timeout: 3x

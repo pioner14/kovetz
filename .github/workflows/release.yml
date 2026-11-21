@@ -1,0 +1,162 @@
+name: Release
+
+# Publishes a GitHub release with the Linux, Windows and Android builds. The
+# app's update check reads these releases and expects the file names
+# kovetz-<version>-android.apk, -linux-x64.tar.gz and -windows-x64.zip.
+#
+# Use: bump `version:` in app/pubspec.yaml, push the commit, then
+#   git tag v0.5.1 && git push origin v0.5.1
+# A tag with a dash (v0.5.1-beta) is published as a pre-release.
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+env:
+  FLUTTER_VERSION: '3.50.0'
+
+defaults:
+  run:
+    working-directory: app
+
+jobs:
+  check:
+    name: Check the tag
+    runs-on: ubuntu-24.04
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - id: version
+        run: |
+          version=$(sed -n 's/^version: \([0-9.]*\)+.*/\1/p' pubspec.yaml)
+          tag="${GITHUB_REF_NAME#v}"
+          if [ "${tag%%-*}" != "$version" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match pubspec version $version" >&2
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: ${{ matrix.target }}
+    needs: check
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - target: Linux
+            runner: ubuntu-24.04
+          - target: Windows
+            runner: windows-2025
+          - target: Android
+            runner: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Install Linux build dependencies
+        if: matrix.target == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev
+
+      - name: Set up Java
+        if: matrix.target == 'Android'
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+
+      - run: flutter pub get
+
+      - name: Analyze and test
+        if: matrix.target != 'Android'
+        run: |
+          flutter analyze
+          flutter test
+
+      - name: Build and pack Linux
+        if: matrix.target == 'Linux'
+        shell: bash
+        run: |
+          flutter build linux --release
+          tar -C build/linux/x64/release -czf "$RUNNER_TEMP/kovetz-${{ needs.check.outputs.version }}-linux-x64.tar.gz" bundle
+
+      - name: Build and pack Windows
+        if: matrix.target == 'Windows'
+        shell: pwsh
+        run: |
+          flutter build windows --release
+          Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath "$env:RUNNER_TEMP/kovetz-${{ needs.check.outputs.version }}-windows-x64.zip"
+
+      # A published APK must be signed with the permanent key, never with the
+      # debug key, or phones would refuse to update it later.
+      - name: Build and sign Android
+        if: matrix.target == 'Android'
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          if [ -z "$ANDROID_KEYSTORE_BASE64" ]; then
+            echo "Signing secrets are not set; refusing to publish a debug-signed APK." >&2
+            exit 1
+          fi
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/release.jks"
+          {
+            echo "storeFile=$RUNNER_TEMP/release.jks"
+            echo "storePassword=$ANDROID_KEYSTORE_PASSWORD"
+            echo "keyAlias=$ANDROID_KEY_ALIAS"
+            echo "keyPassword=$ANDROID_KEY_PASSWORD"
+          } > android/key.properties
+          flutter build apk --release
+          cp build/app/outputs/flutter-apk/app-release.apk "$RUNNER_TEMP/kovetz-${{ needs.check.outputs.version }}-android.apk"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: release-${{ matrix.target }}
+          path: |
+            ${{ runner.temp }}/kovetz-*
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    name: Publish release
+    needs: [check, build]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          path: files
+          pattern: release-*
+          merge-multiple: true
+      - name: Create the release
+        working-directory: files
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          ls -l
+          sha256sum kovetz-* > SHA256SUMS.txt
+          flags=""
+          case "$GITHUB_REF_NAME" in *-*) flags="--prerelease" ;; esac
+          gh release create "$GITHUB_REF_NAME" kovetz-* SHA256SUMS.txt \
+            --title "Kovetz ${{ needs.check.outputs.version }}" \
+            --generate-notes $flags
