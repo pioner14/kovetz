@@ -44,7 +44,8 @@ Every device keeps its own notes, highlights and bookmarks, and restoring a back
 | **Linux x86-64** | ✅ tested | Desktop Arch Linux (Omarchy): launch and full use; build and tests in CI on Ubuntu 24.04 |
 | **Windows 10/11 x86-64** | ✅ tested on Windows 11 | Latest Windows 11 build: install, launch, full use. Minimum is Windows 10 (64-bit); not tried by hand on Windows 10. Build and automated tests in CI on Windows Server 2025 |
 | Android tablets | ➖ not tested | Expected to work like the phone |
-| macOS, iOS | ❌ not supported | No builds |
+| **macOS 12+** (Apple Silicon and Intel) | 🧪 experimental | Builds and passes automated tests in CI on macOS, but not tried on a real Mac; the app is not signed by Apple |
+| iOS | ❌ not supported | No builds |
 
 Tested with JW Library backups using database schema versions 5, 8, 14 and 16 (both variants of 16).
 
@@ -61,6 +62,7 @@ Download the file for your system from the [releases page](https://github.com/pi
 - `kovetz-<version>-android-arm64.apk` — Android, 64-bit ARM (almost all modern phones and tablets); allow installing from your browser;
 - **Windows.** Run `kovetz-<version>-windows-x64-setup.exe` and follow the installer prompts. The installer isn't signed with a certificate yet. If SmartScreen shows a warning, click “More info”, then “Run anyway”.
 - **Linux.** Download `kovetz-<version>-linux-x86_64.AppImage`. In your downloads folder, run `chmod +x kovetz-*-linux-x86_64.AppImage`, then double-click the file. If the AppImage fails to start, install `libfuse2` (`libfuse2t64` on Ubuntu 24.04) or run the file with `--appimage-extract-and-run`.
+- `kovetz-<version>-macos-universal.zip` — macOS (experimental): unzip and drag `Kovetz.app` to Applications. On first launch macOS warns about an unknown developer: right-click the app → Open → Open (or allow it in System Settings → Privacy & Security). If you have a Mac and try it, please tell me in [Issues](https://github.com/pioner14/kovetz/issues) how it went.
 
 > **Android is built for arm64 only.** That covers almost all phones and tablets from recent years, and the file is about three times smaller (around 23 MB). If you need another architecture (armeabi-v7a, x86_64), open an [issue](https://github.com/pioner14/kovetz/issues) and I will build it for you.
 
